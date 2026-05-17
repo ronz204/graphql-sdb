@@ -1,1 +1,0 @@
-### Stocky | Werehouse Management System
