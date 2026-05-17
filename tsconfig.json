@@ -25,6 +25,8 @@
     "types": ["@types/bun"],
 
     // Module resolution paths
-    "paths": {}
+    "paths": {
+      "@env": ["./source/env.ts"],
+    }
   }
 }
