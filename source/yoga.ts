@@ -1,48 +1,24 @@
-import yoga from "@elysia/graphql-yoga"
-import { Users } from "./users";
 import { drizz } from "./drizzle"
-import { eq } from "drizzle-orm";
+import yoga from "@elysia/graphql-yoga"
+import { UserRepository } from "./user.repo";
+import { UserResolver } from "./user.resolve";
+import { UserTypeDefs } from "./user.typedefs";
 
-const type1 = /* GraphQL */ `
-  type User {
-    id: ID!
-    name: String!
-    email: String!
-  }
+import type { GetUserByIdArgs } from "./user.resolve";
 
-  type Query {
-    users: [User!]!
-    user(id: ID!): User
-  }
-`;
+const userRepo = new UserRepository(drizz);
+const userResolver = new UserResolver(userRepo);
 
 
 export const Yoga = yoga({
-  typeDefs: /* GraphQL */ `
-    ${type1}
-    type Query {
-      hi: String!
-    }
-  `,
+  typeDefs: UserTypeDefs,
   resolvers: {
     Query: {
-      hi: () => "Hello World!",
       users: async () => {
-        const users = await drizz.select().from(Users);
-        return users.map((user) => ({
-          id: String(user.id),
-          name: user.name,
-          email: user.email,
-        }));
+        return userResolver.getAllUsers();
       },
-      user: async (_: any, { id }: { id: string }) => {
-        const user = await drizz.select().from(Users).where(eq(Users.id, Number(id))).limit(1).get();
-        if (!user) return null;
-        return {
-          id: String(user.id),
-          name: user.name,
-          email: user.email,
-        };
+      user: async (_: unknown, args: GetUserByIdArgs) => {
+        return userResolver.getUserById(args);
       },
     },
   },
