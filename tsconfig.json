@@ -29,6 +29,10 @@
       "@env": ["./source/env.ts"],
       "@models/*": ["./source/models/*"],
       "@plugins/*": ["./source/plugins/*"],
+      "@graphql/*": ["./source/graphql/*"],
+      "@features/*": ["./source/features/*"],
+
+      "@repos/*": ["./source/database/repos/*"],
     }
   }
 }
