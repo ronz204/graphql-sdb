@@ -1,4 +1,6 @@
-export const UserGraphQL = /* GraphQL */ `
+import { gql } from "@elysia/apollo";
+
+export const UserGraphQL = gql`
   type User {
     id: ID!
     name: String!
