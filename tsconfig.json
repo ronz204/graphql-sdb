@@ -27,6 +27,7 @@
     // Module resolution paths
     "paths": {
       "@env": ["./source/env.ts"],
+      "@plugins/*": ["./source/plugins/*"],
     }
   }
 }
