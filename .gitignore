@@ -7,6 +7,9 @@ out
 dist
 *.tgz
 
+# codegen
+generated.ts
+
 # code coverage
 coverage
 *.lcov
