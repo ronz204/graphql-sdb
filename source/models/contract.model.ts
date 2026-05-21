@@ -1,4 +1,4 @@
-import { Wallets } from "./wallet.model";
+import { Wallets } from "./wallets.model";
 import type { InferSelectModel } from "drizzle-orm";
 import { int, sqliteTable, text, real } from "drizzle-orm/sqlite-core";
 

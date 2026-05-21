@@ -1,11 +1,11 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "e41e423e-bb26-4aa7-8736-d36621002ef4",
-  "prevId": "63c7ba03-4798-4c50-8747-eb871a8804da",
+  "id": "d6a98753-db1e-471d-881e-0e76e5c4ff4a",
+  "prevId": "1cbd3cab-d07f-4606-a173-9a8cbab28db1",
   "tables": {
-    "users": {
-      "name": "users",
+    "profiles": {
+      "name": "profiles",
       "columns": {
         "id": {
           "name": "id",
@@ -37,8 +37,8 @@
         }
       },
       "indexes": {
-        "users_email_unique": {
-          "name": "users_email_unique",
+        "profiles_email_unique": {
+          "name": "profiles_email_unique",
           "columns": [
             "email"
           ],
@@ -75,8 +75,8 @@
           "autoincrement": false,
           "default": 0
         },
-        "userId": {
-          "name": "userId",
+        "ownerId": {
+          "name": "ownerId",
           "type": "integer",
           "primaryKey": false,
           "notNull": true,
@@ -93,12 +93,12 @@
         }
       },
       "foreignKeys": {
-        "wallets_userId_users_id_fk": {
-          "name": "wallets_userId_users_id_fk",
+        "wallets_ownerId_profiles_id_fk": {
+          "name": "wallets_ownerId_profiles_id_fk",
           "tableFrom": "wallets",
-          "tableTo": "users",
+          "tableTo": "profiles",
           "columnsFrom": [
-            "userId"
+            "ownerId"
           ],
           "columnsTo": [
             "id"

@@ -1,11 +1,11 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "63c7ba03-4798-4c50-8747-eb871a8804da",
+  "id": "1cbd3cab-d07f-4606-a173-9a8cbab28db1",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
-    "users": {
-      "name": "users",
+    "profiles": {
+      "name": "profiles",
       "columns": {
         "id": {
           "name": "id",
@@ -37,8 +37,8 @@
         }
       },
       "indexes": {
-        "users_email_unique": {
-          "name": "users_email_unique",
+        "profiles_email_unique": {
+          "name": "profiles_email_unique",
           "columns": [
             "email"
           ],
