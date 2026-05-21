@@ -1,0 +1,10 @@
+type Wallet {
+  id: ID!
+  owner: String!
+  balance: Float!
+}
+
+type Query {
+  wallet(id: ID!): Wallet
+  wallets: [Wallet!]!
+}
