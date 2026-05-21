@@ -8,6 +8,27 @@
       "when": 1779061021034,
       "tag": "0000_flippant_guardsmen",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1779335801146,
+      "tag": "0001_wise_stardust",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1779336023195,
+      "tag": "0002_black_swordsman",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1779336044081,
+      "tag": "0003_yummy_cargill",
+      "breakpoints": true
     }
   ]
 }
