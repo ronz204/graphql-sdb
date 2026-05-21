@@ -27,12 +27,12 @@
     // Module resolution paths
     "paths": {
       "@env": ["./source/env.ts"],
+      "@gen/*": ["./generated/*"],
+      
       "@models/*": ["./source/models/*"],
       "@plugins/*": ["./source/plugins/*"],
       "@graphql/*": ["./source/graphql/*"],
       "@features/*": ["./source/features/*"],
-
-      "@repos/*": ["./source/database/repos/*"],
     }
   }
 }

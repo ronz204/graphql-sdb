@@ -8,7 +8,7 @@ dist
 *.tgz
 
 # codegen
-generated.ts
+/generated
 
 # code coverage
 coverage

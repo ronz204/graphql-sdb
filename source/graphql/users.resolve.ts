@@ -1,4 +1,4 @@
-import type { Resolvers, User } from "./generated";
+import type { Resolvers, User } from "@gen/graphql/schema";
 
 const users: User[] = [
   { id: "1", name: "Alice", code: "A1" },
