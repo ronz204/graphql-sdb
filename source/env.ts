@@ -11,7 +11,7 @@ const envSchema = z.object({
   // ==========================================
   // SQLite Config
   // ==========================================
-  DB_FILE_NAME: z.string(),
+  DATABASE_URL: z.string(),
 
   // ==========================================
   // Security Config
