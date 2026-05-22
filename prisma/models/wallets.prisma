@@ -1,0 +1,10 @@
+model Wallet {
+  id      Int    @id @default(autoincrement())
+  address String @unique
+  balance Float  @default(0.0)
+
+  userId Int // Foreign key to User
+  user   User @relation(fields: [userId], references: [id])
+
+  @@map("wallets")
+}
