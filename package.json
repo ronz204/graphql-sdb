@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "codegen": "graphql-codegen",
+    "graphql:generate": "graphql-codegen",
     "start:dev": "bun run --watch source/boot.ts",
     "prisma:generate": "bunx --bun prisma generate",
     "prisma:migrate": "bunx --bun prisma migrate dev"
