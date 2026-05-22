@@ -5,19 +5,21 @@
   "private": true,
   "scripts": {
     "codegen": "graphql-codegen",
-    "dev": "bun run --watch source/boot.ts"
+    "start:dev": "bun run --watch source/boot.ts",
+    "prisma:generate": "bunx --bun prisma generate",
+    "prisma:migrate": "bunx --bun prisma migrate dev"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^7.0.0",
     "@types/bun": "latest",
-    "drizzle-kit": "^0.31.10"
+    "prisma": "^7.8.0"
   },
   "dependencies": {
+    "@prisma/adapter-libsql": "^7.8.0",
+    "@prisma/client": "^7.8.0",
     "@elysia/graphql-yoga": "^1.4.1",
-    "@elysiajs/cors": "^1.4.2",
     "@elysiajs/openapi": "^1.4.15",
-    "@libsql/client": "^0.17.3",
-    "drizzle-orm": "^0.45.2",
+    "@elysiajs/cors": "^1.4.2",
     "elysia": "^1.4.28",
     "graphql": "^16.14.0",
     "zod": "^4.4.3"
