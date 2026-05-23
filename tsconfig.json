@@ -30,7 +30,9 @@
       "@graph/*": ["./generated/graphql/*"],
       "@prisma/*": ["./generated/prisma/*"],
       
+      "@repos/*": ["./source/repos/*"],
       "@plugins/*": ["./source/plugins/*"],
+      "@graphql/*": ["./source/graphql/*"],
       "@database/*": ["./source/database/*"],
       "@features/*": ["./source/features/*"],
     }

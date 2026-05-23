@@ -1,9 +1,9 @@
-import { UserDao } from "./users.dao";
+import { UserRepository } from "@repos/users.repo";
 
 export class UserProvider {
-  constructor(private readonly dao: UserDao) {};
+  constructor(private readonly repo: UserRepository) {};
 
   public async getAllUsers() {
-    return await this.dao.getAllUsers();
+    return await this.repo.getAllUsers();
   };
 };
