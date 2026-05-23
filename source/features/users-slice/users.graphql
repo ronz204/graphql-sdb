@@ -5,6 +5,15 @@ type User {
   code:  String!
 }
 
+input NewUserInput {
+  name:  String!
+  email: String!
+}
+
 type Query {
   users: [User!]!
+}
+
+type Mutation {
+  saveNewUser(input: NewUserInput!): User!
 }
