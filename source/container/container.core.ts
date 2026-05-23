@@ -1,6 +1,11 @@
 import { Token } from "./container.token";
-import type { Factory } from "./container.token";
-import type { Binding } from "./container.token";
+
+type Factory<T> = () => T;
+
+interface Binding<T> {
+  factory: Factory<T>;
+  singleton: boolean;
+}
 
 export class Container {
   private bindings = new Map<Token<unknown>, Binding<unknown>>();
