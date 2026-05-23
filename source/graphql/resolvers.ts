@@ -1,11 +1,7 @@
-import { UserQueries } from "@features/users-slice/users.queries";
-import { UserMutations } from "@features/users-slice/users.mutations";
+import { UserResolvers } from "@features/users-slice/users.resolvers";
 
-export const YogaResolvers = {
+export const ResolversGql = {
   Query: {
-    ...UserQueries.Query,
-  },
-  Mutation: {
-    ...UserMutations
+    ...UserResolvers.Query,
   },
 };
