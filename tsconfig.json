@@ -35,6 +35,7 @@
       "@graphql/*": ["./source/graphql/*"],
       "@database/*": ["./source/database/*"],
       "@features/*": ["./source/features/*"],
+      "@container/*": ["./source/container/*"],
     }
   }
 }
