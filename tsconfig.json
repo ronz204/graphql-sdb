@@ -27,7 +27,6 @@
     // Module resolution paths
     "paths": {
       "@env": ["./source/env.ts"],
-      "@graph/*": ["./generated/graphql/*"],
       "@prisma/*": ["./generated/prisma/*"],
       
       "@repos/*": ["./source/repos/*"],

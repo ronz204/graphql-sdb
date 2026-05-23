@@ -9,6 +9,7 @@ dist
 
 # codegen
 /generated
+generated.ts
 
 # code coverage
 coverage

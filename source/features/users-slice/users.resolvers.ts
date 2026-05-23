@@ -1,4 +1,4 @@
-import type { Resolvers } from "@graph/schema";
+import type { Resolvers } from "@graphql/generated";
 
 export const UserResolvers: Resolvers = {
   Query: {
