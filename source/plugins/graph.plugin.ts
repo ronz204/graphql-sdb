@@ -1,14 +1,15 @@
 import yoga from "@elysia/graphql-yoga";
+import { Di } from "@container/container.deps";
+
 import { SchemasGql } from "@graphql/schemas";
 import { ResolversGql } from "@graphql/resolvers";
 
-import { container } from "@container/container.deps";
 import { UserTokens } from "@features/users-slice/users.tokens";
 
 export const GraphPlugin = yoga({
   typeDefs: SchemasGql,
   context: () => ({
-    userProvider: container.resolve(UserTokens.Provider),
+    userProvider: Di.resolve(UserTokens.Provider),
   }),
   resolvers: ResolversGql,
 });

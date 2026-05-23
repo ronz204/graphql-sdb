@@ -2,10 +2,12 @@ import { prisma } from "@database/prisma.conn";
 import { Container } from "@container/container.core";
 
 import { UserRepository } from "@repos/users.repo";
-
-import { UserProvider } from "@features/users-slice/users.provider";
 import { UserTokens } from "@features/users-slice/users.tokens";
+import { UserProvider } from "@features/users-slice/users.provider";
 
-export const container: Container = new Container()
+export const Di: Container = new Container()
+  // ==== Bindings for Repositories
   .bind(UserTokens.Repository, () => new UserRepository(prisma))
-  .bind(UserTokens.Provider, () => new UserProvider(container.resolve(UserTokens.Repository)));
+
+  // ==== Bindings for Providers
+  .bind(UserTokens.Provider, () => new UserProvider(Di.resolve(UserTokens.Repository)));

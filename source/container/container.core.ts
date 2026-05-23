@@ -1,4 +1,6 @@
 import { Token } from "./container.token";
+import type { Factory } from "./container.token";
+import type { Binding } from "./container.token";
 
 export class Container {
   private bindings = new Map<Token<unknown>, Binding<unknown>>();
