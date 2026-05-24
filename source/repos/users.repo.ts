@@ -6,6 +6,11 @@ export type NewUserDto = {
   email: User["email"];
 };
 
+export type EditUserDto = {
+  name?: User["name"];
+  email?: User["email"];
+};
+
 export class UserRepository {
   constructor(private readonly db: PrismaClient) {};
 
@@ -17,5 +22,9 @@ export class UserRepository {
     const random = Math.floor(1000 + Math.random() * 9000);
     const code = `${user.name.substring(0, 3).toUpperCase()}-${random}`;
     return await this.db.user.create({ data: { ...user, code } });
+  };
+
+  public async editUser(id: number, user: EditUserDto): Promise<User> {
+    return await this.db.user.update({ where: { id }, data: user });
   };
 };

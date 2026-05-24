@@ -1,6 +1,8 @@
 import type { User } from "@prisma/client";
 import { UserRepository } from "@repos/users.repo";
+
 import type { NewUserDto } from "@repos/users.repo";
+import type { EditUserDto } from "@repos/users.repo";
 
 export class UserProvider {
   constructor(private readonly repo: UserRepository) {};
@@ -11,5 +13,9 @@ export class UserProvider {
 
   public async saveNewUser(user: NewUserDto): Promise<User> {
     return await this.repo.saveNewUser(user);
+  };
+
+  public async editUser(id: number, user: EditUserDto): Promise<User> {
+    return await this.repo.editUser(id, user);
   };
 };
