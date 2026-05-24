@@ -10,10 +10,17 @@ input NewUserInput {
   email: String!
 }
 
+input EditUserInput {
+  id:    Int!
+  name:  String
+  email: String
+}
+
 type Query {
   users: [User!]!
 }
 
 type Mutation {
+  editUser(input: EditUserInput!): User!
   saveNewUser(input: NewUserInput!): User!
 }
